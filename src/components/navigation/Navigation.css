@@ -1,0 +1,25 @@
+.football-header > nav {
+    padding: 10px;
+}
+.football-header > nav > ul {
+    display: flex;
+    flex-wrap: no-wrap;
+    list-style: none;
+}
+.football-header > nav > ul > li {
+    padding: 0 25px;
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.active {
+    background-color: #c0b218;
+    padding: 17px 35px;
+    margin-left: 10px;
+}
+.football-header {
+    padding: 10px;
+    background-color: #000;
+}
