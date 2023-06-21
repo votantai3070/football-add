@@ -1,23 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { data } from '../shared/ListOfPlayer';
 import './Player.css';
-import { Players } from '../shared/ListOfPlayer';
-export default class player extends Component {
-    render() {
-        return (
-            <div className="container">
-                {Players.map((player) => (
-                    <div className="column">
-                        <div className="card">
-                            <img src={player.img} />
-                            <h3>{player.name}</h3>
-                            <p className="title">{player.club}</p>
-                            <p className="card-btm">
-                                <button>Detail</button>
-                            </p>
-                        </div>
+import { Link } from 'react-router-dom';
+import { Card, Col, Container, Row } from 'react-materialize';
+
+export default function Player() {
+    return (
+        <div className="container">
+            {data.map((player, index) => (
+                <div key={index} className="column">
+                    <div className="card">
+                        <img src={player.img} alt="" />
+                        <h3>{player.name}</h3>
+                        <p className="title"></p>
+                        <p className="btn">
+                            <Link to={`detail/${player.id}`}>
+                                <button className="card-btn">Detail</button>
+                            </Link>
+                        </p>
                     </div>
-                ))}
-            </div>
-        );
-    }
+                </div>
+            ))}
+        </div>
+    );
 }
